@@ -24,14 +24,14 @@ public class Main_lesson_1 {
         return a * (b + (c / d));
     }
 
-    private static boolean inRange (int x,int y){
+    private static boolean InRange (int x,int y){
 
         int sum = x + y;
         return sum < 20 && sum > 10;
 
     }
 
-    public static boolean leapYear(int year) {
+    public static boolean LeapYear(int year) {
 
         return (year % 100 != 0) && (year % 4 == 0) || (year % 400 == 0);
 
@@ -62,13 +62,13 @@ public class Main_lesson_1 {
 
 //4. Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит в пределах 10 до 20, если да – вернуть true, в противном случае – false.
 
-        System.out.println(inRange(5,6));
+        System.out.println(InRange(5,6));
 
 //5. * Написать метод, который определяет является ли год високосным. Каждый 4-й год является
 //    високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
 
-        System.out.println(leapYear(2016));
-        System.out.println(leapYear(2017));
+        System.out.println(LeapYear(2016));
+        System.out.println(LeapYear(2017));
 
 
     }
