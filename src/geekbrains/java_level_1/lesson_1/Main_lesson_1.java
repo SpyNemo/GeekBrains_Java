@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Main_lesson_1 {
 
-
     public static float Calculation () {
 
         Scanner sc = new Scanner(System.in);
@@ -72,6 +71,5 @@ public class Main_lesson_1 {
 
 
     }
-
 
 }
