@@ -20,6 +20,15 @@ import java.util.Scanner;
 
 public class Main_lesson_2 {
 
+    public static void formalization_begin(int task_num){
+        System.out.println();
+        System.out.println("=============================================================================");
+        System.out.println("====================Задача №" + task_num + "===============================================");
+    }
+    public static void formalization_end(){
+        System.out.println();
+        System.out.println();
+    }
 
 
 
@@ -33,7 +42,7 @@ public class Main_lesson_2 {
         for (int i = 0; i < ar_size; i++) {
           s_array[i] = generator.nextInt(2);
         }
-
+        System.out.println("Original array: " + Arrays.toString(s_array));
         return s_array;
 
      }
@@ -54,6 +63,8 @@ public class Main_lesson_2 {
              }
 
          }
+
+        System.out.println("Inverted array : " + Arrays.toString(in_s_array));
             return in_s_array;
 
     }
@@ -74,7 +85,7 @@ public class Main_lesson_2 {
     public static void not_less_than_six (){
 
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println("Fixed array  with elements less 6                     : " + Arrays.toString(arr));
+        System.out.println("Fixed array  with elements less than 6                 : " + Arrays.toString(arr));
 
         for (int i = 0; i < arr.length ; i++) {
             if (arr[i] < 6) {
@@ -97,19 +108,21 @@ public class Main_lesson_2 {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
+
                 arr[i][j] = generator.nextInt(98);
-                if (i == j){
+
+                if ((i == j) || (i==(arr.length-j-1))){
                     arr[i][j] = 1;
                 }
             }
 
         }
-        System.out.println(Arrays.deepToString(arr).replace("], ", "]\n"));
+        System.out.println(Arrays.deepToString(arr).replace("], ", "\t]\n").replace(",","\t").replace("[[","[").replace("]]","\t]"));
 
     }
 
 // 6 ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
-public static void min_max_array (int ar_size){
+    public static void min_max_array (int ar_size){
     Random generator = new Random();
 
     int min, max, range;
@@ -141,47 +154,41 @@ public static void min_max_array (int ar_size){
 
 
 // 1. ==========================
-        System.out.println("Task 1");
-        System.out.println();
+        formalization_begin(1);
         System.out.print("Size of array :  ");
         int ar_size = input.nextInt();
         int arr[] =  simple_array(ar_size);
-        System.out.println("Original array2: " + Arrays.toString(arr));
-        System.out.println();
+        formalization_end();
 // 2. ==========================
-        System.out.println("Task 2");
-        System.out.println();
+        formalization_begin(2);
         invert_array(arr);
-        System.out.println("Inverted array : " + Arrays.toString(arr));
-        System.out.println();
+        formalization_end();
 // 3. ==========================
-        System.out.println("Task 3");
-        System.out.println();
+        formalization_begin(3);
         fixed_array();
-        System.out.println();
+        formalization_end();
 // 4. ==========================
-        System.out.println("Task 4");
-        System.out.println();
+        formalization_begin(4);
         not_less_than_six();
-        System.out.println();
+        formalization_end();
 // 5. ==========================
-        System.out.println("Task 5");
-        System.out.println();
+        formalization_begin(5);
         System.out.print("Size of 2Dim array :  ");
         ar_size = input.nextInt();
         two_dim_array_w_dia(ar_size);
-        System.out.println();
+        formalization_end();
 // 6. ==========================
-        System.out.println("Task 6");
-        System.out.println();
+        formalization_begin(6);
         min_max_array(ar_size);
-        System.out.println();
+        formalization_end();
 // 7**. ==========================
+        formalization_begin(7);
 
-
+        formalization_end();
 // 8**. ==========================
+        formalization_begin(8);
 
-
+        formalization_end();
     }
 
 
