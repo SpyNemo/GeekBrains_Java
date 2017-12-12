@@ -1,5 +1,4 @@
 package geekbrains.java_level_1.lesson_2;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -200,10 +199,32 @@ public class Main_lesson_2 {
 
 
 // 8 ** Написать простой консольный калькулятор. Пользователь вводит два числа и операцию, которую хочет выполнить, программа вычисляет результат и выводит в консоль;
-    public static double calculator (){
+    public static double calculator (int a, int b, char opr ){
 
         double result = 0;
 
+        switch (opr) {
+
+            case '+':
+                result = a + b;
+            break;
+
+            case '-':
+                result = a - b;
+                break;
+
+            case '/':
+                result = a / b;
+                break;
+
+            case '*':
+                result = a * b;
+                break;
+
+                default:
+                    System.out.printf("Wrong operation");
+
+        }
 
         return result;
 
@@ -215,7 +236,7 @@ public class Main_lesson_2 {
 
         Scanner input = new Scanner(System.in);
 
-/*
+
 // 1. ==========================
         formalization_begin(1);
         System.out.print("Size of array :  ");
@@ -243,17 +264,29 @@ public class Main_lesson_2 {
 // 6. ==========================
         formalization_begin(6);
         min_max_array(ar_size);
-        formalization_end();*/
+        formalization_end();
 // 7**. ==========================
         formalization_begin(7);
         int[] test_arr = {0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,2,0};
-
         equal_parts (test_arr);
         formalization_end();
 // 8**. ==========================
         formalization_begin(8);
 
+        System.out.print("First number             :");
+        int a = input.nextInt();
+        System.out.print("Second number            :");
+        int b = input.nextInt();
+        System.out.print("Operation (+, -, /, *)   :");
+        char opr = input.next().charAt(0);
+
+        System.out.println("Result  :" + calculator(a, b, opr));
+
         formalization_end();
+
+
+
+
     }
 
 
