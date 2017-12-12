@@ -1,4 +1,5 @@
 package geekbrains.java_level_1.lesson_2;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -144,7 +145,69 @@ public class Main_lesson_2 {
     System.out.println("MIN = " + min + "; \t" + "MAX = " + max);
     }
 
+// 7 ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true если в массиве есть место, в котором сумма левой и правой части массива равны.
+//      Примеры: checkBalance([1, 1, 1, || 2, 1]) → true, checkBalance ([2, 1, 1, 2, 1]) → false, checkBalance ([10, || 10]) → true, граница показана символами ||, эти символы в массив не входят.
+    public static void equal_parts (int[] arr){
 
+        int left_part, right_part, mid;
+        left_part = right_part = mid = 0;
+
+
+        if (arr.length > 2) {
+
+            for (int i = 1; i < arr.length+1; i++) {
+
+                for (int j = 0; j < i; j++) {
+                    left_part += arr [j];
+//                    System.out.println("left   " + i + "   " + j + "  " + left_part);
+
+                }
+
+                for (int j = 0+i; j < arr.length; j++) {
+                    right_part += arr[j];
+//                    System.out.println("right  "  + i + "   " + j + "  " + right_part);
+
+                }
+
+
+            if (left_part == right_part) {
+
+
+                System.out.println(left_part + "  " + right_part);
+                    System.out.println(Arrays.toString(arr));
+
+                for (int j = 0; j < arr.length; j++) {
+                    System.out.print(arr[j] + "\t");
+                        if (j == i-1) System.out.print("||\t");
+
+                }
+                break;
+
+                }
+
+                left_part = right_part = 0;
+                System.out.println();
+
+            }
+
+
+        }
+        else System.out.println("Array is too small.");
+
+    }
+
+
+
+
+// 8 ** Написать простой консольный калькулятор. Пользователь вводит два числа и операцию, которую хочет выполнить, программа вычисляет результат и выводит в консоль;
+    public static double calculator (){
+
+        double result = 0;
+
+
+        return result;
+
+    }
 
 
 //=============== MAIN ==============================
@@ -152,7 +215,7 @@ public class Main_lesson_2 {
 
         Scanner input = new Scanner(System.in);
 
-
+/*
 // 1. ==========================
         formalization_begin(1);
         System.out.print("Size of array :  ");
@@ -180,10 +243,12 @@ public class Main_lesson_2 {
 // 6. ==========================
         formalization_begin(6);
         min_max_array(ar_size);
-        formalization_end();
+        formalization_end();*/
 // 7**. ==========================
         formalization_begin(7);
+        int[] test_arr = {0,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,2,0};
 
+        equal_parts (test_arr);
         formalization_end();
 // 8**. ==========================
         formalization_begin(8);
